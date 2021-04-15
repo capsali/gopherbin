@@ -1,0 +1,25 @@
+[apiserver]
+bind = "0.0.0.0"
+port = $API_PORT
+use_tls = false
+# Use a decently secure secret. Obviously this needs to be changed :-).
+session_secret = "$API_SESSION_SECRET"
+
+[apiserver.jwt_auth]
+secret = "$API_JWT_SECRET"
+
+#[apiserver.tls]
+#certificate = "/path/to/cert.pem"
+#key = "/path/to/key.pem"
+#ca_certificate = "/path/to/ca_cert.pem"
+
+[database]
+backend = "$DB_BACKEND"
+
+[database.mysql]
+username = "$DB_USER"
+# This obviously also needs to be changed :-)
+password = "$DB_PASSWORD"
+hostname = "$DB_HOST"
+database = "$DB_NAME"
+
